@@ -10,6 +10,6 @@
   </Database>
   <Libraries />
   <Types>
-    <Type name="MotionCmd" path="Disk://ros_libs/MotionCmd/MotionCmd.pjx" />
+    <Type name="MotionCmd" path="../MotionCmd/MotionCmd.pjx" />
   </Types>
 </Project>
