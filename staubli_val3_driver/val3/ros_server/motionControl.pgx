@@ -6,6 +6,8 @@
       <Local name="l_bFlag" type="bool" xsi:type="array" size="1" />
       <Local name="l_motion" type="MotionCmd" xsi:type="array" size="1" />
       <Local name="l_nElems" type="num" xsi:type="array" size="1" />
+      <Local name="bLastPt" type="bool" xsi:type="array" size="1" />
+      <Local name="nPrevVel" type="num" xsi:type="array" size="1" />
     </Locals>
     <Code><![CDATA[begin
   // Copyright (c) 2016, Ocado Technology - Robotics Research Team
@@ -52,9 +54,6 @@
           nVel[1] = nVel[0]
           nVel[0] = rosTrajPtMsg.jointTrajPt.nVelocity
           
-          // Interpolate velocity for last point in trajectory
-          call interpolateVel(l_motion)
-          
           // contrary to what we did earlier, we unconditionally add the traj pt to the motion queue:
           // there doesn't appear to be a way to compare the 'current pose' of the robot to the pts
           // in the trajectory at the appropriate time (ie: when the robot is in motion and about to
@@ -62,7 +61,28 @@
           // Checking for dist(l_motion, herej()) (pseudo code) would not be correct as there will
           // always be a delay in the data coming out of herej() and the actual pose of the robot.
           // @TODO potentially set move id according to sequence value
+
+          // Identifies the last point of the trajectory as Moveit sets the velocity to 0.1 which is scaled to 10 on the robot side by default
+          if ((l_motion.mDesc.vel > 9.99999) and (l_motion.mDesc.vel < 10.00001) and (l_motion.nSequence != 0))
+            bLastPt = true
+            l_motion.mDesc.vel = nPrevVel
+          else
+            // velocity is set to a fixed value here
+            // outcomment the line below if you want to use the calculated velocity (slower but 
+            // adaptive)
+            l_motion.mDesc.vel=100
+            bLastPt = false
+            nPrevVel = l_motion.mDesc.vel
+          endIf
+
+          l_motion.mDesc.blend=joint
+          l_motion.mDesc.leave=0.5
+          l_motion.mDesc.reach=0.5
+
           nMoveId = movej(l_motion.jJointRx, tTool, l_motion.mDesc)
+          if (bLastPt)
+            waitEndMove()
+          endIf
         endIf
       endIf
     else
