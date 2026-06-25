@@ -26,6 +26,9 @@
 
   <buildtool_depend>catkin</buildtool_depend>
 
+  <build_depend>simple_message</build_depend>
+  <build_depend>industrial_robot_client</build_depend>
+
   <exec_depend>industrial_robot_client</exec_depend>
 
   <test_depend>roslaunch</test_depend>

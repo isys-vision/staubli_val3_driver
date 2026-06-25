@@ -39,7 +39,11 @@
       // JointTrajectoryInterface::calc_speed()
       // velocity is converted to a scalar value representing % of max velocity,
       // such that 0.2 = 20% of maximum joint speed
-      l_mTrajPt.mDesc.vel= limit((rosTrajPtMsg.jointTrajPt.nVelocity * 100), 0, 100)
+      if(rosTrajPtMsg.jointTrajPt.nVelocity > 1.99)
+        l_mTrajPt.mDesc.vel = 200
+      else
+        l_mTrajPt.mDesc.vel= limit((rosTrajPtMsg.jointTrajPt.nVelocity * 100), 0, 100)
+      endIf
       l_mTrajPt.nDuration=rosTrajPtMsg.jointTrajPt.nDuration
 
     break

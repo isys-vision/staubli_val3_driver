@@ -9,6 +9,6 @@
   <param name="robot_ip_address" type="str" value="$(arg robot_ip)" />
 
   <!-- reuse generic industrial robot client interface streaming node -->
-  <node pkg="industrial_robot_client" type="motion_streaming_interface"
+  <node pkg="staubli_val3_driver" type="motion_streaming_interface"
     name="motion_streaming_interface" />
 </launch>

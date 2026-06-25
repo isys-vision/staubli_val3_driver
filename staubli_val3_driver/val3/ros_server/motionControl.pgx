@@ -62,24 +62,23 @@
           // always be a delay in the data coming out of herej() and the actual pose of the robot.
           // @TODO potentially set move id according to sequence value
 
-          // Identifies the last point of the trajectory as Moveit sets the velocity to 0.1 which is scaled to 10 on the robot side by default
-          if ((l_motion.mDesc.vel > 9.99999) and (l_motion.mDesc.vel < 10.00001) and (l_motion.nSequence != 0))
+          // to detect the last point, its velocity is set to 2 (resulting in 200 here) before sending it. The previous pts velocity is used.
+          if ((l_motion.mDesc.vel > 199.999) and (l_motion.nSequence != 0))
             bLastPt = true
             l_motion.mDesc.vel = nPrevVel
           else
-            // velocity is set to a fixed value here
-            // outcomment the line below if you want to use the calculated velocity (slower but 
-            // adaptive)
-            l_motion.mDesc.vel=100
             bLastPt = false
             nPrevVel = l_motion.mDesc.vel
           endIf
+
 
           l_motion.mDesc.blend=joint
           l_motion.mDesc.leave=0.5
           l_motion.mDesc.reach=0.5
 
           nMoveId = movej(l_motion.jJointRx, tTool, l_motion.mDesc)
+
+          // do not use blending for last pt
           if (bLastPt)
             waitEndMove()
           endIf
