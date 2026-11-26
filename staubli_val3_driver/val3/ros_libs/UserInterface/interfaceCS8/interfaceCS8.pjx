@@ -19,6 +19,6 @@
     <Data file="interfaceCS8.dtx" />
   </Database>
   <Libraries>
-    <Library alias="libQueueFuncs" path="Disk://ros_libs/QueueFuncs/QueueFuncs.pjx" />
+    <Library alias="libQueueFuncs" path="../../QueueFuncs/QueueFuncs.pjx" />
   </Libraries>
 </Project>

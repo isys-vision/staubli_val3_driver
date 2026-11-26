@@ -14,7 +14,7 @@
   </Database>
   <Libraries />
   <Types>
-    <Type name="Queue" path="Disk://ros_libs/Queue/Queue.pjx" />
-    <Type name="MotionCmd" path="Disk://ros_libs/MotionCmd/MotionCmd.pjx" />
+    <Type name="Queue" path="../Queue/Queue.pjx" />
+    <Type name="MotionCmd" path="../MotionCmd/MotionCmd.pjx" />
   </Types>
 </Project>

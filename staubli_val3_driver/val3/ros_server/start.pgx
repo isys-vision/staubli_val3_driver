@@ -50,10 +50,10 @@
       popUpMsg("Error: VAL 3 version is < 7.7, socket communication will not work!")
       taskKill("ros_server~")
     endIf
-    libInterface:libLoad("ros_libs/UserInterface/interfaceCS8")
+    libInterface:libLoad("../ros_libs/UserInterface/interfaceCS8")
   elseIf(mid(getVersion("System"),1,1) == "8")
     // CS9 - VAL 3 rev 8
-    libInterface:libLoad("ros_libs/UserInterface/interfaceCS9")
+    libInterface:libLoad("../ros_libs/UserInterface/interfaceCS9")
   endIf
 
   // feedback task will run every 20ms (50Hz)

@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.0.2)
+cmake_minimum_required(VERSION 3.22.0)
 project(staubli_val3_driver)
 
 find_package(catkin REQUIRED)

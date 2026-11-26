@@ -39,20 +39,20 @@
     <Data file="ros_server.dtx" />
   </Database>
   <Libraries>
-    <Library alias="libQueueFuncs" path="Disk://ros_libs/QueueFuncs/QueueFuncs.pjx" />
-    <Library alias="libInterface" path="Disk://ros_libs/UserInterface/interfaceDefault/interfaceDefault.pjx" autoload="false" />
+    <Library alias="libQueueFuncs" path="../ros_libs/QueueFuncs/QueueFuncs.pjx" />
+    <Library alias="libInterface" path="../ros_libs/UserInterface/interfaceDefault/interfaceDefault.pjx" autoload="false" />
   </Libraries>
   <Types>
-    <Type name="RosSimpleMsg" path="Disk://ros_libs/RosSimpleMsg/RosSimpleMsg.pjx" />
-    <Type name="RobotStatusMsg" path="Disk://ros_libs/RobotStatusMsg/RobotStatusMsg.pjx" />
-    <Type name="JointStateMsg" path="Disk://ros_libs/JointStateMsg/JointStateMsg.pjx" />
-    <Type name="JointTrajPtMsg" path="Disk://ros_libs/JointTrajPtMsg/JointTrajPtMsg.pjx" />
-    <Type name="JointTrajPtFMsg" path="Disk://ros_libs/JointTrajPtFMsg/JointTrajPtFMsg.pjx" />
-    <Type name="JointFbkMsg" path="Disk://ros_libs/JointFbkMsg/JointFbkMsg.pjx" />
-    <Type name="MotionCmd" path="Disk://ros_libs/MotionCmd/MotionCmd.pjx" />
-    <Type name="Header" path="Disk://ros_libs/Header/Header.pjx" />
-    <Type name="Prefix" path="Disk://ros_libs/Prefix/Prefix.pjx" />
-    <Type name="Body" path="Disk://ros_libs/Body/Body.pjx" />
-    <Type name="Queue" path="Disk://ros_libs/Queue/Queue.pjx" />
+    <Type name="RosSimpleMsg" path="../ros_libs/RosSimpleMsg/RosSimpleMsg.pjx" />
+    <Type name="RobotStatusMsg" path="../ros_libs/RobotStatusMsg/RobotStatusMsg.pjx" />
+    <Type name="JointStateMsg" path="../ros_libs/JointStateMsg/JointStateMsg.pjx" />
+    <Type name="JointTrajPtMsg" path="../ros_libs/JointTrajPtMsg/JointTrajPtMsg.pjx" />
+    <Type name="JointTrajPtFMsg" path="../ros_libs/JointTrajPtFMsg/JointTrajPtFMsg.pjx" />
+    <Type name="JointFbkMsg" path="../ros_libs/JointFbkMsg/JointFbkMsg.pjx" />
+    <Type name="MotionCmd" path="../ros_libs/MotionCmd/MotionCmd.pjx" />
+    <Type name="Header" path="../ros_libs/Header/Header.pjx" />
+    <Type name="Prefix" path="../ros_libs/Prefix/Prefix.pjx" />
+    <Type name="Body" path="../ros_libs/Body/Body.pjx" />
+    <Type name="Queue" path="../ros_libs/Queue/Queue.pjx" />
   </Types>
 </Project>

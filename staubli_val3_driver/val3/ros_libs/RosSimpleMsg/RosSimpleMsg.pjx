@@ -10,7 +10,7 @@
   </Database>
   <Libraries />
   <Types>
-    <Type name="Prefix" path="Disk://ros_libs/Prefix/Prefix.pjx" />
-    <Type name="Header" path="Disk://ros_libs/Header/Header.pjx" />
+    <Type name="Prefix" path="../Prefix/Prefix.pjx" />
+    <Type name="Header" path="../Header/Header.pjx" />
   </Types>
 </Project>
